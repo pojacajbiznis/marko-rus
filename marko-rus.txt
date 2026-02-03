@@ -1,0 +1,28 @@
+Site name: Marko Rus
+business type: Eksterijer/Enterijer
+
+Taglines - main site info:
+	Proizvodnja i ugradnja dekorativnog kamena 🧱
+	Eksterijer/Enterijer 🏢🏠
+	Pretvori svoj zid u remek-delo!✨
+
+Facebook: https://www.facebook.com/people/Dekorativni-kamen-Marko-Rus/61580436026017/?locale=id_ID#
+instagram: https://www.instagram.com/ugradnja_dekorativnog_kamenaa
+
+phone: 0631687228 (+381631687228)
+email1: markorusmarkovic0226@gmail.com
+email2: marija.markovic8@icloud.com
+address: Donji Katun, 37260
+google maps: https://maps.app.goo.gl/S8bFACNizeZEPUFp8
+
+Sections:
+
+- Proizvodnja
+- Prevoz
+- Prodaja
+
+Cene
+	- cigla: 15 eur/m^2
+	- uglovi: 12 eur/m
+	- fug masa: 1 eur/kg
+
