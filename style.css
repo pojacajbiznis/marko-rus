@@ -109,6 +109,7 @@ a {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
+    word-wrap: break-word;
 }
 
 .section-title::after {
@@ -309,6 +310,8 @@ a {
     transform: translate(-50%, -50%);
     object-fit: cover;
     z-index: 0;
+    max-width: none;
+    /* Let object-fit handle it */
 }
 
 .hero-overlay {
@@ -535,6 +538,166 @@ a {
 }
 
 /* ==========================================
+   MATERIAL INFO SECTION
+   ========================================== */
+.material-info {
+    padding: var(--spacing-3xl) 0;
+    background: var(--bg-dark);
+}
+
+.material-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.material-content p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.material-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   PALETTE INFO SECTION
+   ========================================== */
+.palette-info {
+    padding: var(--spacing-3xl) 0;
+    background: var(--bg-darker);
+}
+
+.palette-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--spacing-3xl);
+    align-items: center;
+}
+
+.palette-image {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.palette-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.palette-image:hover img {
+    transform: scale(1.05);
+}
+
+.palette-text {
+    color: var(--text-secondary);
+}
+
+.palette-text p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+}
+
+.palette-text h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.palette-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.palette-list li {
+    position: relative;
+    padding-left: var(--spacing-lg);
+    font-size: 1.125rem;
+}
+
+.palette-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* ==========================================
+   CATALOG SECTION
+   ========================================== */
+.catalog {
+    padding: var(--spacing-3xl) 0;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.catalog-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.catalog-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(160, 82, 45, 0.3);
+}
+
+.catalog-item img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    transition: transform var(--transition-slow);
+    margin-bottom: var(--spacing-md);
+}
+
+.catalog-item:hover img {
+    transform: scale(1.05);
+}
+
+.catalog-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    padding: var(--spacing-xs);
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ==========================================
    PRICING SECTION
    ========================================== */
 .pricing {
@@ -652,6 +815,7 @@ a {
     color: var(--text-secondary);
     margin-bottom: var(--spacing-xs);
     transition: color var(--transition-fast);
+    word-break: break-all;
 }
 
 .contact-link:hover {
@@ -691,6 +855,8 @@ a {
 
 .contact-map iframe {
     filter: grayscale(0.3) contrast(1.1);
+    max-width: 100%;
+    display: block;
 }
 
 /* ==========================================
@@ -775,6 +941,9 @@ a {
     .about,
     .services,
     .gallery,
+    .material-info,
+    .palette-info,
+    .catalog,
     .pricing,
     .contact {
         padding: var(--spacing-2xl) 0;
@@ -786,10 +955,26 @@ a {
         gap: var(--spacing-sm);
     }
 
+    /* Catalog */
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: var(--spacing-md);
+    }
+
     /* Services */
     .services-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
+    }
+
+    /* Palette */
+    .palette-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .palette-image {
+        order: -1;
     }
 }
 
