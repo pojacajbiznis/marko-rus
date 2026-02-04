@@ -245,6 +245,7 @@ a {
 
 .hamburger.active span:nth-child(2) {
     opacity: 0;
+    background: transparent;
 }
 
 .hamburger.active span:nth-child(3) {
