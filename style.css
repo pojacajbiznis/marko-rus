@@ -154,10 +154,16 @@ a {
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--text-primary);
     transition: transform var(--transition-fast);
+}
+
+@media (min-width: 1280px) {
+    .logo-link {
+        font-size: 1.5rem;
+    }
 }
 
 .logo-link:hover {
